@@ -106,3 +106,15 @@ resource "aws_lambda_permission" "bucket_put_lambda_invocation" {
   principal     = "s3.amazonaws.com"
   source_arn    = aws_s3_bucket.bucket.arn
 }
+
+resource "aws_cloudwatch_log_group" "lambda" {
+  name = "/aws/lambda/${local.prefix}-lambda"
+
+  retention_in_days = 1
+
+  lifecycle {
+    create_before_destroy = true
+    prevent_destroy       = false
+  }
+}
+
