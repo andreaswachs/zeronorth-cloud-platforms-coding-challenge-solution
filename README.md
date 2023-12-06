@@ -1,6 +1,6 @@
 # zeronorth-cloud-platforms-coding-challenge-solution
 
-My solution to this coding challenge.
+My solution to [this coding challenge](https://github.com/0north/cloud-platforms-coding-challenge).
 
 ## Setup
 
