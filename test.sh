@@ -8,17 +8,15 @@ key_file="${key}.json"
 # This test script assumes that the infra+app has been deployed
 
 # Generate a JSON file with a list of random numbers
-echo "🔄 Generating random numbers... (also deleting any existing random_numbers.json file)"
+echo "🔄 Generating random numbers..."
 
 rm -f "${key_file}" || true
 echo -n "[" >> $key_file
 
-numbers=()
 expected_sum=0
 for i in {1..10}
 do
     number=$RANDOM
-    numbers+=($number)
     expected_sum=$((expected_sum + number))
     echo -n $number >> $key_file
     if [ $i -ne 10 ]
@@ -31,7 +29,7 @@ echo -n "]" >> $key_file
 echo "🔄 Expected sum: ${expected_sum}"
 
 # Upload the JSON file to S3
-echo "🔄 Uploading random_numbers.json to S3..."
+echo "🔄 Uploading ${key_file} to S3..."
 aws s3api put-object --bucket "${bucket}" --key "${key}.json" --body "${key_file}" > /dev/null
 
 echo -n "🔄 Sleeping for 10 seconds to allow the lambda to process the file"
