@@ -30,7 +30,7 @@ wherein you create a Terraform user.
 To get this project working, I have created a 'terraform' user with the following 
 permission policies added to it:
 
-- `AmazonCloudWatchEvidentlyFullAccess` (note: *I'm unsure if this is truly needed*)
+- `CloudWatchFullAccess`
 - `AmazonS3FullAccess`
 - `AWSLambda_FullAccess`
 - `IAMFullAccess`
