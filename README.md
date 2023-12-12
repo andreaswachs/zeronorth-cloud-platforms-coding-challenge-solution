@@ -44,6 +44,7 @@ You need the following tools on your dev computer:
 - `terraform` CLI tool. Any recent version is presumably working
 - `bash`: the `test.sh` script assumes that you're working on a Linux/MacOS
    machine.
+- `jq`: CLI tool to work with JSON data. This is needed for the test script
 
 ## Deploying infrastructure and application
 
